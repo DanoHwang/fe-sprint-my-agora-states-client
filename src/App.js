@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './Pages/Header';
 import Side from './Pages/Side';
+import DiscussionList from './Pages/DiscussionList';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Header />
       <div className="main">
         <Side />
+        <DiscussionList />
       </div>
     </div>
   );

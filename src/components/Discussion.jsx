@@ -4,7 +4,7 @@ const Discussion = ({ data }) => {
   const { createdAt, title, author, avatarUrl, url } = data;
 
   return (
-    <>
+    <div className="discussion__container">
       <div className="discussion__avatar--wrapper">
         <img src={avatarUrl} alt="thumbnail" className="discussion__avatar--image" />
       </div>
@@ -17,7 +17,7 @@ const Discussion = ({ data }) => {
         </div>
       </div>
       <div className="discussion__answered"></div>
-    </>
+    </div>
   );
 };
 

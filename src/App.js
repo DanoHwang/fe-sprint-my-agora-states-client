@@ -25,6 +25,7 @@ function App() {
   const openModal = () => {
     setModalOpen(true);
   };
+
   const closeModal = () => {
     setModalOpen(false);
   };
@@ -40,7 +41,7 @@ function App() {
       <Header openModal={openModal} closeModal={closeModal} />
       <div className="main">
         <Side />
-        <DiscussionList data={discussionList} />
+        <DiscussionList data={discussionList} closeModal={closeModal} />
       </div>
     </div>
   );

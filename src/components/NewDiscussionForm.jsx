@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { changeUtcToLocal } from '../api/ChangeUtcToLocal';
 import { createDiscussion } from '../api/DiscussionDataApi';
 
-const NewDiscussionForm = ({ onUpdate }) => {
+const NewDiscussionForm = ({ onUpdate, closeModal }) => {
   const [ content, setContent ] = useState({
     author: "",
     title: "",
@@ -13,9 +12,9 @@ const NewDiscussionForm = ({ onUpdate }) => {
     e.preventDefault();
 
     const { author, title, story } = content;
-    const utcDate = new Date().getTime() + (new Date().getTimezoneOffset() * 60 * 1000);
+    const date = new Date().toISOString();
     const newQuestion = {
-      createdAt: changeUtcToLocal(utcDate),
+      createdAt: date,
       title,
       author,
       bodyHTML: `<p>${story}</p>`,
@@ -25,6 +24,12 @@ const NewDiscussionForm = ({ onUpdate }) => {
     const updatedDiscussionList = await createDiscussion(newQuestion);
 
     onUpdate(updatedDiscussionList);
+    setContent({
+      author: "",
+      title: "",
+      story: ""
+    });
+    closeModal();
   };
 
   const handleFormChange = (e) => {

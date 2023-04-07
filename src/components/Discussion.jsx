@@ -1,4 +1,5 @@
 import React from 'react';
+import { changeUtcToLocal } from '../api/ChangeUtcToLocal';
 
 const Discussion = ({ data }) => {
   const { createdAt, title, author, avatarUrl, url } = data;
@@ -13,7 +14,7 @@ const Discussion = ({ data }) => {
           <a href={url}>{title}</a>
         </div>
         <div className="discussion__information">
-          {`${author} / ${createdAt}`}
+          {`${author} / ${changeUtcToLocal(createdAt)}`}
         </div>
       </div>
       <div className="discussion__answered"></div>

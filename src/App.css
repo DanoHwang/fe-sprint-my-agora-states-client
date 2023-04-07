@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Gowun+Dodum&family=Roboto:wght@500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -23,4 +26,9 @@ button:hover {
   color: white;
   outline: 0;
   transition: 0.3s;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
 }

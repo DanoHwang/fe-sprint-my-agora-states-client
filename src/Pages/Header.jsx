@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({ openModal, closeModal }) => {
   return (
     <header className="header">
       <div className="header__top">
@@ -31,7 +31,12 @@ const Header = () => {
             Github
           </a>
         </div>
-        <button className="discussion__question-button">질문하기</button>
+        <button
+          className="discussion__question-button"
+          onClick={() => openModal()}
+        >
+          질문하기
+        </button>
       </div>
     </header>
   );
